@@ -46,7 +46,7 @@ namespace TesteApi.Controllers
 
 
 
-        [HttpPut("inativaFuncionario")]
+        [HttpPut("InativaFuncionario/{id}")]
         public async Task<ActionResult<ServiceResponse<List<FuncionarioModel>>>> InativaFuncionario(int id)
         {
             ServiceResponse<List<FuncionarioModel>> serviceResponse = await _funcionarioInterface.InativaFuncionario(id);
@@ -54,7 +54,7 @@ namespace TesteApi.Controllers
             return Ok(serviceResponse);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<ServiceResponse<List<FuncionarioModel>>>> DeleteFuncionario(int id)
         {
             ServiceResponse<List<FuncionarioModel>> serviceResponse = await _funcionarioInterface.DeleteFuncionario(id);
